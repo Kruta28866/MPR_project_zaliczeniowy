@@ -1,6 +1,6 @@
 GET http://localhost:8080/api/status/3
 ###
-GET http://localhost:8080/api/status/2
+GET http://localhost:8080/api/status/1
 ###
 GET http://localhost:8080/api/status/123
 ###
@@ -12,7 +12,7 @@ DELETE http://localhost:8080/api/delete/2
 ###
 DELETE http://localhost:8080/api/delete/3
 ###
-DELETE http://localhost:8080/api/delete/123
+DELETE http://localhost:8080/api/delete/2
 ###
 POST http://localhost:8080/api/create
 Content-Type: application/json
