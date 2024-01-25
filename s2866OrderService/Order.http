@@ -1,1 +1,67 @@
 GET http://localhost:8080/api/status/3
+###
+GET http://localhost:8080/api/status/2
+###
+GET http://localhost:8080/api/status/123
+###
+GET http://localhost:8080/api/deliver/4
+###
+GET http://localhost:8080/api/deliver/5
+###
+DELETE http://localhost:8080/api/delete/2
+###
+DELETE http://localhost:8080/api/delete/3
+###
+DELETE http://localhost:8080/api/delete/123
+###
+POST http://localhost:8080/api/create
+Content-Type: application/json
+
+{
+  "id": 123,
+  "userId": 456,
+  "address": "Sample Address",
+  "items": [
+    {
+      "id": 1,
+      "name": "cebula",
+      "quantity": 1
+    },
+    {
+      "id": 2,
+      "name": "papryka",
+      "quantity": 2
+    },
+    {
+      "id": 3,
+      "name": "maslo",
+      "quantity": 3
+    }
+  ]
+}
+###
+POST http://localhost:8080/api/create
+Content-Type: application/json
+
+{
+  "id": 123,
+  "userId": 456,
+  "address": "Sample Address",
+  "items": [
+    {
+      "id": 14524,
+      "name": "Sample Item",
+      "quantity": 3
+    },
+    {
+      "id": 123412,
+      "name": "Sample Item",
+      "quantity": 3
+    },
+    {
+      "id": 1123123,
+      "name": "Sample Item",
+      "quantity": 3
+    }
+  ]
+}

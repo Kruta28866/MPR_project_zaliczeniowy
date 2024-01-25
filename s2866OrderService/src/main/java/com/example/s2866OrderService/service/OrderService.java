@@ -3,8 +3,8 @@ package com.example.s2866OrderService.service;
 
 import com.example.s2866OrderService.entity.Item;
 import com.example.s2866OrderService.entity.Order;
-import com.example.s2866OrderService.repository.ItemRepository;
-import com.example.s2866OrderService.repository.OrderRepository;
+import com.example.s2866OrderService.repository.ItemDao;
+import com.example.s2866OrderService.repository.OrderDao;
 import com.example.s2866OrderService.types.OrderStatus;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,32 +15,32 @@ import java.util.Optional;
 //Component robi dokładnie to samo ale definiuje dla ludzi czytelnosc ze to jest service
 @Service
 public class OrderService {
-    private final OrderRepository orderRepository;
-    private final ItemRepository itemRepository;
+    private final OrderDao orderRepository;
+    private final ItemDao itemRepository;
 
 
     //Dependency injection(Wzorzec projektowy) - szykuje daną klasę do kolejnej klasy nie robiąc nowej instancji
     @Autowired
-    public OrderService(OrderRepository repository, ItemRepository itemRepository) {
+    public OrderService(OrderDao repository, ItemDao itemRepository) {
         this.orderRepository = repository;
         this.itemRepository = itemRepository;
     }
 
-    public void createOrder(int orderId, int userId, List<Item> items, String address) {
+    public boolean createOrder(int orderId, int userId, List<Item> items, String address) {
         if (orderId <= 0) {
-            throw new IllegalArgumentException("Invalid order ID");
+            return false;
         }
         if (userId <= 0) {
-            throw new IllegalArgumentException("Invalid customer ID");
+            return false;
         }
         if (items == null || items.isEmpty()) {
-            throw new IllegalArgumentException("Item list cannot be empty");
+            return false;
         }
         if (address == null || address.trim().isEmpty()) {
-            throw new IllegalArgumentException("Delivery address is required");
+            return false;
         }
         if (areItemsAvailable(items)) {
-            throw new IllegalArgumentException("All items are not available");
+            return false;
         }
         var order = Order.builder()
                 .id(orderId)
@@ -51,6 +51,7 @@ public class OrderService {
                 .build();
 
         orderRepository.addOrder(order);
+        return true;
 
     }
 
@@ -59,15 +60,23 @@ public class OrderService {
         return orderRepository.getOrderById(orderID);
     }
 
+    public Optional<Order> getIsDelivered(int orderId) {
+        var order = orderRepository.getOrderById(orderId);
+        if (order.isPresent() && order.get().getOrderStatus() == OrderStatus.DELIVERED) {
+            return order;
+        }
+        return Optional.empty();
+    }
+
     public String deleteOrder(int orderID) {
 
         var order = orderRepository.getOrderById(orderID);
         if (order.isPresent() && order.get().getOrderStatus() == OrderStatus.NEW) {
 
             orderRepository.delete(orderID);
-            return "Zamówienie zostało anulowane.";
+            return "Order Has been cancelled.";
         }
-        return "Zamówienia nie da się anulować";
+        return "Order can't be cancelled";
 
     }
 
