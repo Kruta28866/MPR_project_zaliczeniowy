@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.s2866OrderService.service.OrderServiceTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-01-25T19:02:40" hostname="DESKTOP-8H12OPS" time="0.021">
+  <properties/>
+  <testcase name="createOrder()" classname="com.example.s2866OrderService.service.OrderServiceTest" time="0.007"/>
+  <testcase name="getIsDelivered()" classname="com.example.s2866OrderService.service.OrderServiceTest" time="0.007"/>
+  <testcase name="getOrder()" classname="com.example.s2866OrderService.service.OrderServiceTest" time="0.004"/>
+  <system-out><![CDATA[2024-01-25T20:02:40.974+01:00  INFO 6712 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.example.s2866OrderService.service.OrderServiceTest]: OrderServiceTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2024-01-25T20:02:40.989+01:00  INFO 6712 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.example.s2866OrderService.S2866OrderServiceApplication for test class com.example.s2866OrderService.service.OrderServiceTest
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

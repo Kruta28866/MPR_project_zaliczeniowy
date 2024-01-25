@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.example.s2866OrderService.S2866OrderServiceApplicationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2024-01-25T19:02:39" hostname="DESKTOP-8H12OPS" time="1.04">
+  <properties/>
+  <testcase name="contextLoads()" classname="com.example.s2866OrderService.S2866OrderServiceApplicationTests" time="1.04"/>
+  <system-out><![CDATA[20:02:36.984 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.example.s2866OrderService.S2866OrderServiceApplicationTests]: S2866OrderServiceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+20:02:37.110 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.example.s2866OrderService.S2866OrderServiceApplication for test class com.example.s2866OrderService.S2866OrderServiceApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.2)
+
+2024-01-25T20:02:37.641+01:00  INFO 6712 --- [    Test worker] c.e.s.S2866OrderServiceApplicationTests  : Starting S2866OrderServiceApplicationTests using Java 21.0.2 with PID 6712 (started by Kacper in C:\Users\Kacper\IdeaProjects\MPR_project_zaliczeniowy\s2866OrderService)
+2024-01-25T20:02:37.644+01:00  INFO 6712 --- [    Test worker] c.e.s.S2866OrderServiceApplicationTests  : No active profile set, falling back to 1 default profile: "default"
+2024-01-25T20:02:39.144+01:00  INFO 6712 --- [    Test worker] c.e.s.S2866OrderServiceApplicationTests  : Started S2866OrderServiceApplicationTests in 1.794 seconds (process running for 3.447)
+]]></system-out>
+  <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\Kacper\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.11\f9cb566608fbac6bc7bf54901a7aa11543a989ee\byte-buddy-agent-1.14.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+</testsuite>
